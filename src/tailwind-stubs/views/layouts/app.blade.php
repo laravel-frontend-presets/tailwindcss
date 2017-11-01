@@ -13,17 +13,17 @@
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body class="bg-grey-lighter h-screen">
+<body class="bg-orange-lightest h-screen">
     <div id="app">
-        <nav class="bg-grey-light h-12 shadow pt-3 mb-8">
-            <div class="container mx-auto">
-                <div class="flex justify-between">
-                    <div>
-                        <a class="no-underline font-sans text-grey-darkest text-lg font-normal" href="#" title="Home">
+        <nav class="bg-white h-12 shadow mb-8">
+            <div class="container mx-auto h-full">
+                <div class="flex items-center justify-center h-12">
+                    <div class="mr-6">
+                        <a href="{{ url('/') }}" class="no-underline">
                             {{ config('app.name', 'Laravel') }}
                         </a>
                     </div>
-                    <div>
+                    <div class="flex-1 text-right">
                         @guest
                             <a class="no-underline hover:underline text-grey-darker pr-3 text-sm" href="{{ url('/login') }}">Login</a>
                             <a class="no-underline hover:underline text-grey-darker text-sm" href="{{ url('/register') }}">Register</a>
@@ -40,6 +40,7 @@
                 </div>
             </div>
         </nav>
+
         @yield('content')
     </div>
 
