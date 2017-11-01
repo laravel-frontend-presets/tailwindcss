@@ -1,54 +1,54 @@
 @extends('layouts.app')
 
 @section('content')
-
-    <div class="pa4-l">
-        <form class="bg-near-white mw6 center pa4 br2-ns ba b--black-10" method="POST" action="{{ route('password.request') }}">
-            {{ csrf_field() }}
-            <input type="hidden" name="token" value="{{ $token }}">
-            <fieldset class="cf bn ma0 pa0">
-                <legend class="pa0 f4-ns mb3 black-80">Register</legend>
-                <div class="cf">
-                    <label class="clip" for="email">Email Address</label>
-                    <input
-                        class="f6 mt3 f5-l input-reset black-80 bg-white pa3 lh-solid w-100 br2-ns @if ($errors->has('email')) ba b--light-red @else bn @endif"
-                        placeholder="Your Email Address"
-                        type="text"
-                        name="email"
-                        value="{{ old('email') }}"
-                        id="email">
-                    @if ($errors->has('email'))
-                        <p class="light-red f5 mt1">{{ $errors->first('email') }}</p>
-                    @endif
-
-                    <input
-                        class="f6 f5-l input-reset black-80 bg-white pa3 lh-solid w-100 mt3 br2-ns @if ($errors->has('password'))ba b--light-red @else bn @endif"
-                        type="password"
-                        name="password"
-                        value=""
-                        id="password"
-                        placeholder="Password">
-                    @if ($errors->has('password'))
-                        <p class="light-red f5 mt1">{{ $errors->first('password') }}</p>
-                    @endif
-
-                    <input
-                        class="f6 f5-l input-reset black-80 bg-white pa3 lh-solid w-100 mt3 br2-ns @if ($errors->has('password_confirmation')) ba b--light-red @else bn @endif"
-                        type="password"
-                        name="password_confirmation"
-                        value=""
-                        id="password_confirmation"
-                        placeholder="Confirm Password">
-                    @if ($errors->has('password_confirmation'))
-                        <p class="light-red f5 mt1">{{ $errors->first('password_confirmation') }}</p>
-                    @endif
-
-                    <input
-                        class="f6 f5-l button-reset pv3 fr tc bn bg-animate bg-black-70 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns mt3"
-                        type="submit"
-                        value="Register">
+<div class="container mx-auto">
+    <div class="flex items-center">
+        <div class="md:w-1/2 md:mx-auto">
+            <div class="rounded shadow">
+                <div class="font-bold text-lg bg-grey-light p-3 rounded rounded-t">
+                    Reset Password
                 </div>
-            </fieldset>
-        </form>
+                <div class="bg-white p-3 rounded rounded-b">
+                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
+                        {{ csrf_field() }}
+
+                        <input type="hidden" name="token" value="{{ $token }}">
+
+                        <div class="flex items-stretch mb-3">
+                            <label for="email" class="font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">E-Mail Address</label>
+                            <div class="flex flex-col w-3/4">
+                                <input id="email" type="email" class="flex-grow h-8 px-2 border rounded {{ $errors->has('email') ? 'border-red-dark' : 'border-grey-light' }}" name="email" value="{{ old('email') }}" required autofocus>
+                                {!! $errors->first('email', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+                            </div>
+                        </div>
+
+                        <div class="flex items-stretch mb-3">
+                            <label for="password" class="font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Password</label>
+                            <div class="flex flex-col w-3/4">
+                                <input id="password" type="password" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password') ? 'border-red-dark' : 'border-grey-light' }}" name="password" required>
+                                {!! $errors->first('password', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+                            </div>
+                        </div>
+
+                        <div class="flex items-stretch mb-3">
+                            <label for="password_confirmation" class="font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Confirm Password</label>
+                            <div class="flex flex-col w-3/4">
+                                <input id="password_confirmation" type="password_confirmation" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password_confirmation') ? 'border-red-dark' : 'border-grey-light' }}" name="password" required>
+                                {!! $errors->first('password_confirmation', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+                            </div>
+                        </div>
+
+                        <div class="flex">
+                            <div class="w-3/4 ml-auto">
+                                <button type="submit" class="bg-blue hover:bg-blue-dark text-white text-sm font-sembiold py-2 px-4 rounded mr-3">
+                                    Reset Password
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 @endsection

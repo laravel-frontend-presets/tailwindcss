@@ -11,27 +11,33 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="bg-grey-lighter h-screen">
     <div id="app">
-        <nav class="db dt-l w-100 border-box pa3 ph5-l bg-almost bg-light-gray">
-            <a class="db dtc-l v-mid mid-gray link dim w-100 w-25-l tc tl-l mb2 mb0-l tracked ttu" href="#" title="Home">
-                {{ config('app.name') }}
-            </a>
-            <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
-                @guest
-                    <a class="link dim dark-gray f6 f5-l dib mr3 mr4-l tracked" href="{{ url('/login') }}">Login</a>
-                    <a class="link dim dark-gray f6 f5-l dib tracked" href="{{ url('/register') }}">Register</a>
-                @else
-                    <a href="{{ route('logout') }}"
-                        class="link dim dark-gray f6 f5-l dib mr3 mr4-l tracked"
-                        onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                @endguest
+        <nav class="bg-grey-light h-12 shadow pt-3 mb-8">
+            <div class="container mx-auto">
+                <div class="flex justify-between">
+                    <div>
+                        <a class="no-underline font-sans text-grey-darkest text-lg font-normal" href="#" title="Home">
+                            {{ config('app.name', 'Laravel') }}
+                        </a>
+                    </div>
+                    <div>
+                        @guest
+                            <a class="no-underline hover:underline text-grey-darker pr-3 text-sm" href="{{ url('/login') }}">Login</a>
+                            <a class="no-underline hover:underline text-grey-darker text-sm" href="{{ url('/register') }}">Register</a>
+                        @else
+                            <a href="{{ route('logout') }}"
+                                class="no-underline hover:underline text-grey-darker text-sm"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        @endguest
+                    </div>
+                </div>
             </div>
         </nav>
         @yield('content')

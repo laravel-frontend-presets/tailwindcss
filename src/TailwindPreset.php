@@ -49,4 +49,26 @@ class TailwindPreset extends Preset
 
         copy(__DIR__.'/tailwind-stubs/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
+
+    protected static function scaffoldAuth()
+    {
+        file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
+
+        file_put_contents(
+            base_path('routes/web.php'),
+            "Auth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n\n",
+            FILE_APPEND
+        );
+
+        (new Filesystem)->copyDirectory(__DIR__.'/tailwind-stubs/views', resource_path('views'));
+    }
+
+    protected static function compileControllerStub()
+    {
+        return str_replace(
+            '{{namespace}}',
+            Container::getInstance()->getNamespace(),
+            file_get_contents(__DIR__.'/tailwind-stubs/controllers/HomeController.stub')
+        );
+    }
 }
