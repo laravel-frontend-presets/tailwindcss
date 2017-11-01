@@ -29,6 +29,8 @@ class TailwindPreset extends Preset
     {
         (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
 
+        mkdir(resource_path('assets/css'));
+
         copy(__DIR__.'/tailwind-stubs/resources/assets/css/main.css', resource_path('assets/css/main.css'));
     }
 
