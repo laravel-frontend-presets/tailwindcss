@@ -11,31 +11,47 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body>
-    <article class="vh-100 dt w-100">
-        @if (Route::has('login'))
-            <div class="absolute top-1 right-1 sans-serif">
-                @auth
-                    <a class="link dim gray f6 f6-ns dib mr3" href="{{ url('/home') }}">Home</a>
-                @else
-                    <a class="link dim gray f6 f6-ns dib mr3" href="{{ route('login') }}">Login</a>
-                    <a class="link dim gray f6 f6-ns dib mr3" href="{{ route('register') }}">Register</a>
-                @endauth
+<body class="bg-grey-lighter h-screen">
+        <div class="container mx-auto h-full">
+            <div class="flex flex-col justify-around h-full">
+                <div class="absolute pin-t pin-r">
+                    @if (Route::has('login'))
+                        <div class="pin-t pin-r mt-3 mr-4">
+                            @auth
+                                <a class="no-underline hover:underline text-blue-dark" href="{{ url('/home') }}">Home</a>
+                            @else
+                                <a class="no-underline hover:underline text-blue-dark mr-4" href="{{ url('login') }}">Login</a>
+                                <a class="no-underline hover:underline text-blue-dark" href="{{ url('register') }}">Register</a>
+                            @endauth
+                        </div>
+                    @endif
+                </div>
+                <div class="text-center">
+                    <h1 class="font-sans text-grey-darker text-5xl font-medium mb-4">
+                        {{ config('app.name', 'Laravel') }}
+                    </h1>
+                    <ul class="list-reset">
+                        <li class="inline pr-4">
+                            <a href="https://laravel.com/docs" class="no-underline hover:underline text-blue-dark" title="Documentation">Documentation</a>
+                        </li>
+                        <li class="inline pr-4">
+                            <a href="https://laracasts.com" class="no-underline hover:underline text-blue-dark" title="Laracasts">Laracasts</a>
+                        </li>
+                        <li class="inline pr-4">
+                            <a href="https://laravel-news.com" class="no-underline hover:underline text-blue-dark" title="News">News</a>
+                        </li>
+                        <li class="inline pr-4">
+                            <a href="https://forge.laravel.com" class="no-underline hover:underline text-blue-dark" title="Forge">Forge</a>
+                        </li>
+                        <li class="inline pr-4">
+                            <a href="https://github.com/laravel/laravel" class="no-underline hover:underline text-blue-dark" title="GitHub">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        @endif
-
-        <div class="dtc v-mid tc b--mid-grey ph3 ph4-1 sans-serif">
-            <h1 class="f1 f2-m f-subheadline-1 fw2 tc">
-                Laravel
-            </h1>
-            <a class="link dim gray f6 f5-ns dib mr3" href="https://laravel.com/docs" title="Documentation">Documentation</a>
-            <a class="link dim gray f6 f5-ns dib mr3" href="https://laracasts.com" title="Laracasts">Laracasts</a>
-            <a class="link dim gray f6 f5-ns dib mr3" href="https://laravel-news.com" title="News">News</a>
-            <a class="link dim gray f6 f5-ns dib mr3" href="https://forge.laravel.com" title="Forge">Forge</a>
-            <a class="link dim gray f6 f5-ns dib mr3" href="https://github.com/laravel/laravel" title="GitHub">GitHub</a>
         </div>
-    </article>
+    </div>
 </body>
 </html>
