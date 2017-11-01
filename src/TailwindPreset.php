@@ -37,6 +37,7 @@ class TailwindPreset extends Preset
     protected static function updateBootstrapping()
     {
         copy(__DIR__.'/tailwind-stubs/tailwind.js', base_path('tailwind.js'));
+        copy(__DIR__.'/tailwind-stubs/webpack.mix.js', base_path('webpack.mix.js'));
         copy(__DIR__.'/tailwind-stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
     }
 
