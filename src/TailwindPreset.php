@@ -28,6 +28,8 @@ class TailwindPreset extends Preset
     protected static function updateStyles()
     {
         (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
+        (new Filesystem)->delete(public_path('js/app.js'));
+        (new Filesystem)->delete(public_path('css/app.css'));
 
         mkdir(resource_path('assets/css'));
 
