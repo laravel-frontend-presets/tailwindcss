@@ -1,0 +1,21 @@
+{
+    "name": "dyrynda/laravel-preset-tailwind",
+    "description": "Laravel 5.5 frontend preset for Tailwind",
+    "keywords": ["laravel", "preset", "tailwind"],
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "5.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dyrynda\\LaravelPresets\\Tailwind\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dyrynda\\LaravelPresets\\Tailwind\\TailwindPresetServiceProvider"
+            ]
+        }
+    }
+}
