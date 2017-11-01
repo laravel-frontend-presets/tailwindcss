@@ -22,6 +22,10 @@ $ npm run dev
 
 Enjoy!
 
+### Changing colours
+
+If you want to change the default orange colour being used, update the `brand-{modifier}` values in your `tailwind.js` file.
+
 ### Screenshots
 
 ![Welcome](/screenshots/welcome.png)
