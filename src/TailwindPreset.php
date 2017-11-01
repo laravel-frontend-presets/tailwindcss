@@ -29,7 +29,7 @@ class TailwindPreset extends Preset
     {
         (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
 
-        copy(__DIR__.'/tailwind-stubs/resources/assets/css/main.css', resource_path('assets/css/app.css'));
+        copy(__DIR__.'/tailwind-stubs/resources/assets/css/main.css', resource_path('assets/css/main.css'));
     }
 
     protected static function updateBootstrapping()
