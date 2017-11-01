@@ -50,7 +50,7 @@ class TailwindPreset extends Preset
         copy(__DIR__.'/tailwind-stubs/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
 
-    protected static function scaffoldAuth()
+    public static function installAuth()
     {
         file_put_contents(app_path('Http/Controllers/HomeController.php'), static::compileControllerStub());
 
