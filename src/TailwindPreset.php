@@ -18,6 +18,12 @@ class TailwindPreset extends Preset
         static::removeNodeModules();
     }
 
+    public static function installAuth()
+    {
+        static::install();
+        static::scaffoldAuth();
+    }
+
     protected static function updatePackageArray(array $packages)
     {
         return [
