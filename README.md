@@ -1,5 +1,7 @@
 # Tailwind CSS preset for the Laravel framework
 
+A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
+
 ### Installing
 ```bash
 $ npm install
