@@ -1,25 +1,25 @@
 <?php
 
-namespace Dyrynda\LaravelPresets\Tailwind;
+namespace LaravelFrontendPresets\TailwindCssPreset;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Console\PresetCommand;
 
-class TailwindPresetServiceProvider extends ServiceProvider
+class TailwindCssPresetServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        PresetCommand::macro('tailwind', function ($command) {
+        PresetCommand::macro('tailwindcss', function ($command) {
             TailwindPreset::install();
 
-            $command->info('Tailwind scaffolding installed successfully.');
+            $command->info('Tailwind CSS scaffolding installed successfully.');
             $command->info('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
         });
 
-        PresetCommand::macro('tailwind-auth', function ($command) {
+        PresetCommand::macro('tailwindcss-auth', function ($command) {
             TailwindPreset::installAuth();
 
-            $command->info('Tailwind scaffolding with auth views installed successfully.');
+            $command->info('Tailwind CSS scaffolding with auth views installed successfully.');
             $command->info('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
         });
     }

@@ -1,20 +1,20 @@
 {
-    "name": "dyrynda/laravel-preset-tailwind",
-    "description": "Laravel 5.5 frontend preset for Tailwind",
-    "keywords": ["laravel", "preset", "tailwind"],
+    "name": "laravel-frontend-presets/tailwindcss",
+    "description": "Laravel 5.5 frontend preset for Tailwind CSS",
+    "keywords": ["laravel", "preset", "tailwindcss"],
     "license": "MIT",
     "require": {
         "laravel/framework": "5.5.*"
     },
     "autoload": {
         "psr-4": {
-            "Dyrynda\\LaravelPresets\\Tailwind\\": "src/"
+            "LaravelFrontendPresets\\TailwindCssPreset\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Dyrynda\\LaravelPresets\\Tailwind\\TailwindPresetServiceProvider"
+                "LaravelFrontendPresets\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
             ]
         }
     }
