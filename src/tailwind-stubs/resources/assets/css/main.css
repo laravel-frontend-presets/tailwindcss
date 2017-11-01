@@ -11,9 +11,10 @@
  * Here you would import any custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities can still
  * override them.
+ *
+ * @import "my-components/foo";
+ * @import "my-components/bar";
  */
-// @import "my-components/foo";
-// @import "my-components/bar";
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your
@@ -23,7 +24,8 @@
 
 /**
  * Here you would add any custom utilities you need that don't come out of the box with Tailwind.
+ *
+ * .bg-hero-image {
+ *     background-image: url('/some/image/file.png');
+ * }
  */
-// .bg-hero-image {
-//     background-image: url('/some/image/file.png');
-// }
