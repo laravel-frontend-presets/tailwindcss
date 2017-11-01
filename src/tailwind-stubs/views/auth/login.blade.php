@@ -4,7 +4,7 @@
 <div class="flex items-center">
     <div class="md:w-1/2 md:mx-auto">
         <div class="rounded shadow">
-            <div class="font-medium text-lg text-orange-darker bg-orange-lighter p-3 rounded rounded-t">
+            <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded rounded-t">
                 Login
             </div>
             <div class="bg-white p-3 rounded rounded-b">
@@ -35,10 +35,10 @@
 
                     <div class="flex">
                         <div class="w-3/4 ml-auto">
-                            <button type="submit" class="bg-orange hover:bg-orange-dark text-white text-sm font-sembiold py-2 px-4 rounded mr-3">
+                            <button type="submit" class="bg-brand hover:bg-brand-dark text-white text-sm font-sembiold py-2 px-4 rounded mr-3">
                                 Login
                             </button>
-                            <a class="no-underline hover:underline text-orange-dark text-sm" href="{{ route('password.request') }}">
+                            <a class="no-underline hover:underline text-brand-dark text-sm" href="{{ route('password.request') }}">
                                 Forgot Your Password?
                             </a>
                         </div>
