@@ -4,22 +4,22 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 
 ### Installing
 ```bash
-$ npm install
+composer require dyrynda/laravel-preset-tailwind
 ```
 
 ### Setting up the new preset
 ```bash
-$ php artisan preset tailwind
+php artisan preset tailwind
 ```
 
 ### Auth scaffolding
 ```bash
-$ php artisan preset tailwind-auth
+php artisan preset tailwind-auth
 ```
 
 ### Compiling assets
 ```bash
-$ npm run dev
+npm install && npm run dev
 ```
 
 Enjoy!
