@@ -17,7 +17,7 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 
 ### Changing colours
 
-If you want to change the default orange colour being used, update the `brand-{modifier}` values in your `tailwind.js` file.
+If you want to change the default orange colour being used, update the `brand-{modifier}` values in your `tailwind.js` file. You are of course free to modify this file as you see fit, and even remove and replace the brand configuration in the scaffolded views entirely.
 
 ### Screenshots
 
