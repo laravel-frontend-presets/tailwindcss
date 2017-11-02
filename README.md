@@ -2,7 +2,7 @@
 
 A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
 
-*Current version:* **Tailwind CSS 0.1.0**
+*Current version:* **Tailwind CSS 0.1.2**
 
 ## Usage
 
