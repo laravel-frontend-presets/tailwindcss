@@ -128,13 +128,13 @@ var colors = {
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
 
-  get 'brand-darkest' () => this['orange-darkest'],
-  get 'brand-darker' () => this['orange-darker'],
-  get 'brand-dark' () => this['orange-dark'],
-  get 'brand' () => this['orange'],
-  get 'brand-light' () => this['orange-light'],
-  get 'brand-lighter' () => this['orange-lighter'],
-  get 'brand-lightest' () => this['orange-lightest'],
+  get ['brand-darkest']() { return this['orange-darkest']; },
+  get ['brand-darker']() { return this['orange-darker']; },
+  get ['brand-dark']() { return this['orange-dark']; },
+  get ['brand']() { return this['orange']; },
+  get ['brand-light']() { return this['orange-light']; },
+  get ['brand-lighter']() { return this['orange-lighter']; },
+  get ['brand-lightest']() { return this['orange-lightest']; },
 }
 
 module.exports = {
