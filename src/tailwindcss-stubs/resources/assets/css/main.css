@@ -8,12 +8,19 @@
 @tailwind preflight;
 
 /**
- * Here you would import any custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities can still
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
  * override them.
  *
- * @import "my-components/foo";
- * @import "my-components/bar";
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
  */
 
 /**
@@ -23,9 +30,16 @@
 @tailwind utilities;
 
 /**
- * Here you would add any custom utilities you need that don't come out of the box with Tailwind.
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
  *
- * .bg-hero-image {
- *     background-image: url('/some/image/file.png');
- * }
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor..
+ *
+ * @import "utilities/backgrond-patterns";
+ * @import "utilities/skew-transforms";
  */
