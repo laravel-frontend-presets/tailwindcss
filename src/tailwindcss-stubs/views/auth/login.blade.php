@@ -35,7 +35,7 @@
 
                     <div class="flex">
                         <div class="w-3/4 ml-auto">
-                            <button type="submit" class="bg-brand hover:bg-brand-dark text-white text-sm font-sembiold py-2 px-4 rounded mr-3">
+                            <button type="submit" class="bg-brand hover:bg-brand-dark text-white text-sm font-semibold py-2 px-4 rounded mr-3">
                                 Login
                             </button>
                             <a class="no-underline hover:underline text-brand-dark text-sm" href="{{ route('password.request') }}">
