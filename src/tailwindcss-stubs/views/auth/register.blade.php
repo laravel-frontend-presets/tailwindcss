@@ -12,9 +12,9 @@
                     {{ csrf_field() }}
 
                     <div class="flex items-stretch mb-3">
-                        <label for="email" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Name</label>
+                        <label for="name" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">Name</label>
                         <div class="flex flex-col w-3/4">
-                            <input id="email" type="text" class="flex-grow h-8 px-2 border rounded {{ $errors->has('name') ? 'border-red-dark' : 'border-grey-light' }}" name="name" value="{{ old('name') }}" autofocus>
+                            <input id="name" type="text" class="flex-grow h-8 px-2 border rounded {{ $errors->has('name') ? 'border-red-dark' : 'border-grey-light' }}" name="name" value="{{ old('name') }}" autofocus>
                             {!! $errors->first('name', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
                         </div>
                     </div>
