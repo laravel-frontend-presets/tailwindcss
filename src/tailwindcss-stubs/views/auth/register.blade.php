@@ -4,10 +4,10 @@
 <div class="flex items-center">
     <div class="md:w-1/2 md:mx-auto">
         <div class="rounded shadow">
-            <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded rounded-t">
+            <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded-t">
                 Register
             </div>
-            <div class="bg-white p-3 rounded rounded-b">
+            <div class="bg-white p-3 rounded-b">
                 <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
 
