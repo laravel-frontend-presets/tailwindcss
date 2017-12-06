@@ -870,8 +870,8 @@ module.exports = {
   | Advanced Options                  https://tailwindcss.com/docs/configuration#options
   |-----------------------------------------------------------------------------
   |
-  | Here is where you can set your Tailwind configuration options. For more
-  | details about these options, visit the configuration options documentation.
+  | Here is where you can tweak advanced configuration options. We recommend
+  | leaving these options alone unless you absolutely need to change them.
   |
   */
 
