@@ -767,7 +767,107 @@ module.exports = {
 
   /*
   |-----------------------------------------------------------------------------
-  | Options                  https://tailwindcss.com/docs/configuration#options
+  | SVG fill                                   https://tailwindcss.com/docs/svg
+  |-----------------------------------------------------------------------------
+  |
+  | Here is where you define your SVG fill colors. By default we just provide
+  | `fill-current` which sets the fill to the current text color. This lets you
+  | specify a fill color using existing text color utilities and helps keep the
+  | generated CSS file size down.
+  |
+  | Class name: .fill-{name}
+  |
+  */
+
+  svgFill: {
+    'current': 'currentColor',
+  },
+
+
+  /*
+  |-----------------------------------------------------------------------------
+  | SVG stroke                                 https://tailwindcss.com/docs/svg
+  |-----------------------------------------------------------------------------
+  |
+  | Here is where you define your SVG stroke colors. By default we just provide
+  | `stroke-current` which sets the stroke to the current text color. This lets
+  | you specify a stroke color using existing text color utilities and helps
+  | keep the generated CSS file size down.
+  |
+  | Class name: .stroke-{name}
+  |
+  */
+
+  svgStroke: {
+    'current': 'currentColor',
+  },
+
+
+  /*
+  |-----------------------------------------------------------------------------
+  | Modules                  https://tailwindcss.com/docs/configuration#modules
+  |-----------------------------------------------------------------------------
+  |
+  | Here is where you control which modules are generated and what variants are
+  | generated for each of those modules.
+  |
+  | Currently supported variants: 'responsive', 'hover', 'focus'
+  |
+  | To disable a module completely, use `false` instead of an array.
+  |
+  */
+
+  modules: {
+    appearance: ['responsive'],
+    backgroundAttachment: ['responsive'],
+    backgroundColors: ['responsive', 'hover'],
+    backgroundPosition: ['responsive'],
+    backgroundRepeat: ['responsive'],
+    backgroundSize: ['responsive'],
+    borderColors: ['responsive', 'hover'],
+    borderRadius: ['responsive'],
+    borderStyle: ['responsive'],
+    borderWidths: ['responsive'],
+    cursor: ['responsive'],
+    display: ['responsive'],
+    flexbox: ['responsive'],
+    float: ['responsive'],
+    fonts: ['responsive'],
+    fontWeights: ['responsive', 'hover'],
+    height: ['responsive'],
+    leading: ['responsive'],
+    lists: ['responsive'],
+    margin: ['responsive'],
+    maxHeight: ['responsive'],
+    maxWidth: ['responsive'],
+    minHeight: ['responsive'],
+    minWidth: ['responsive'],
+    negativeMargin: ['responsive'],
+    opacity: ['responsive'],
+    overflow: ['responsive'],
+    padding: ['responsive'],
+    pointerEvents: ['responsive'],
+    position: ['responsive'],
+    resize: ['responsive'],
+    shadows: ['responsive'],
+    svgFill: [],
+    svgStroke: [],
+    textAlign: ['responsive'],
+    textColors: ['responsive', 'hover'],
+    textSizes: ['responsive'],
+    textStyle: ['responsive', 'hover'],
+    tracking: ['responsive'],
+    userSelect: ['responsive'],
+    verticalAlign: ['responsive'],
+    visibility: ['responsive'],
+    whitespace: ['responsive'],
+    width: ['responsive'],
+    zIndex: ['responsive'],
+  },
+  
+  /*
+  |-----------------------------------------------------------------------------
+  | Advanced Options                  https://tailwindcss.com/docs/configuration#options
   |-----------------------------------------------------------------------------
   |
   | Here is where you can set your Tailwind configuration options. For more
@@ -778,6 +878,7 @@ module.exports = {
   options: {
     prefix: '',
     important: false,
+    separator: ':',
   },
 
 }
