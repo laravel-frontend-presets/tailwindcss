@@ -24,7 +24,7 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-// var defaultConfig = require('tailwindcss/defaultConfig')()
+// let defaultConfig = require('tailwindcss/defaultConfig')()
 
 
 /*
@@ -43,29 +43,29 @@ View the full documentation at https://tailwindcss.com.
 |
 */
 
-var colors = {
+let colors = {
   'transparent': 'transparent',
 
-  'black': '#222b2f',
-  'grey-darkest': '#364349',
-  'grey-darker': '#596a73',
-  'grey-dark': '#70818a',
-  'grey': '#9babb4',
-  'grey-light': '#dae4e9',
-  'grey-lighter': '#f3f7f9',
-  'grey-lightest': '#fafcfc',
+  'black': '#22292f',
+  'grey-darkest': '#3d4852',
+  'grey-darker': '#606f7b',
+  'grey-dark': '#8795a1',
+  'grey': '#b8c2cc',
+  'grey-light': '#dae1e7',
+  'grey-lighter': '#f1f5f8',
+  'grey-lightest': '#f8fafc',
   'white': '#ffffff',
 
-  'red-darkest': '#420806',
-  'red-darker': '#6a1b19',
+  'red-darkest': '#3b0d0c',
+  'red-darker': '#621b18',
   'red-dark': '#cc1f1a',
   'red': '#e3342f',
   'red-light': '#ef5753',
   'red-lighter': '#f9acaa',
   'red-lightest': '#fcebea',
 
-  'orange-darkest': '#542605',
-  'orange-darker': '#7f4012',
+  'orange-darkest': '#462a16',
+  'orange-darker': '#613b1f',
   'orange-dark': '#de751f',
   'orange': '#f6993f',
   'orange-light': '#faad63',
@@ -80,8 +80,8 @@ var colors = {
   'yellow-lighter': '#fff9c2',
   'yellow-lightest': '#fcfbeb',
 
-  'green-darkest': '#032d19',
-  'green-darker': '#0b4228',
+  'green-darkest': '#0f2f21',
+  'green-darker': '#1a4731',
   'green-dark': '#1f9d55',
   'green': '#38c172',
   'green-light': '#51d88a',
@@ -89,15 +89,15 @@ var colors = {
   'green-lightest': '#e3fcec',
 
   'teal-darkest': '#0d3331',
-  'teal-darker': '#174e4b',
+  'teal-darker': '#20504f',
   'teal-dark': '#38a89d',
   'teal': '#4dc0b5',
   'teal-light': '#64d5ca',
   'teal-lighter': '#a0f0ed',
   'teal-lightest': '#e8fffe',
 
-  'blue-darkest': '#05233b',
-  'blue-darker': '#103d60',
+  'blue-darkest': '#12283a',
+  'blue-darker': '#1c3d5a',
   'blue-dark': '#2779bd',
   'blue': '#3490dc',
   'blue-light': '#6cb2eb',
@@ -112,29 +112,21 @@ var colors = {
   'indigo-lighter': '#b2b7ff',
   'indigo-lightest': '#e6e8ff',
 
-  'purple-darkest': '#1f133f',
-  'purple-darker': '#352465',
+  'purple-darkest': '#21183c',
+  'purple-darker': '#382b5f',
   'purple-dark': '#794acf',
   'purple': '#9561e2',
   'purple-light': '#a779e9',
   'purple-lighter': '#d6bbfc',
   'purple-lightest': '#f3ebff',
 
-  'pink-darkest': '#45051e',
-  'pink-darker': '#72173a',
+  'pink-darkest': '#451225',
+  'pink-darker': '#6f213f',
   'pink-dark': '#eb5286',
   'pink': '#f66d9b',
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
   'pink-lightest': '#ffebef',
-
-  get ['brand-darkest']() { return this['orange-darkest']; },
-  get ['brand-darker']() { return this['orange-darker']; },
-  get ['brand-dark']() { return this['orange-dark']; },
-  get ['brand']() { return this['orange']; },
-  get ['brand-light']() { return this['orange-light']; },
-  get ['brand-lighter']() { return this['orange-lighter']; },
-  get ['brand-lightest']() { return this['orange-lightest']; },
 }
 
 module.exports = {
@@ -864,10 +856,11 @@ module.exports = {
     width: ['responsive'],
     zIndex: ['responsive'],
   },
-  
+
+
   /*
   |-----------------------------------------------------------------------------
-  | Advanced Options                  https://tailwindcss.com/docs/configuration#options
+  | Advanced Options         https://tailwindcss.com/docs/configuration#options
   |-----------------------------------------------------------------------------
   |
   | Here is where you can tweak advanced configuration options. We recommend
