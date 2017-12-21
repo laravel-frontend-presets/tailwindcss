@@ -28,6 +28,8 @@ class TailwindCssPreset extends Preset
     {
         return [
             'tailwindcss' => '^0.4.0',
+            'glob-all' => '*',
+            'purgecss-webpack-plugin' => '*'
         ] + Arr::except($packages, ['bootstrap-sass', 'jquery']);
     }
 
