@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-var tailwindcss = require('tailwindcss');
+let tailwindcss = require('tailwindcss');
 let glob = require("glob-all");
 let PurgecssPlugin = require("purgecss-webpack-plugin");
 
