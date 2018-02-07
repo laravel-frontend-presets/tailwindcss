@@ -1,5 +1,5 @@
-let mix = require('laravel-mix');
-let tailwindcss = require('tailwindcss');
+let mix = require("laravel-mix");
+let tailwindcss = require("tailwindcss");
 let glob = require("glob-all");
 let PurgecssPlugin = require("purgecss-webpack-plugin");
 
@@ -20,10 +20,11 @@ class TailwindExtractor {
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .postCss('resources/assets/css/main.css', 'public/css', [
-        tailwindcss('tailwind.js'),
-   ]);
+mix
+  .js("resources/assets/js/app.js", "public/js")
+  .postCss("resources/assets/css/main.css", "public/css", [
+    tailwindcss("tailwind.js")
+  ]);
 
 // If you want to use LESS for your preprocessing
 // mix.less('resources/assets/less/main.less', 'public/css')
@@ -68,4 +69,3 @@ mix.js('resources/assets/js/app.js', 'public/js')
 //     ]
 //   });
 // }
-

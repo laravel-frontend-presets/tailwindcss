@@ -1,21 +1,21 @@
 {
-    "name": "laravel-frontend-presets/tailwindcss",
-    "description": "Laravel 5.5 frontend preset for Tailwind CSS",
-    "keywords": ["laravel", "preset", "tailwindcss"],
-    "license": "MIT",
-    "require": {
-        "laravel/framework": "5.5.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "LaravelFrontendPresets\\TailwindCssPreset\\": "src/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "LaravelFrontendPresets\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
-            ]
-        }
+  "name": "laravel-frontend-presets/tailwindcss",
+  "description": "Laravel 5.5 frontend preset for Tailwind CSS",
+  "keywords": ["laravel", "preset", "tailwindcss"],
+  "license": "MIT",
+  "require": {
+    "laravel/framework": "5.5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelFrontendPresets\\TailwindCssPreset\\": "src/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaravelFrontendPresets\\TailwindCssPreset\\TailwindCssPresetServiceProvider"
+      ]
+    }
+  }
 }
