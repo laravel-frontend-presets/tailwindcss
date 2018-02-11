@@ -30,7 +30,7 @@ class TailwindCssPreset extends Preset
             'tailwindcss' => '^0.4.0',
             'glob-all' => '*',
             'purgecss-webpack-plugin' => '*'
-        ] + Arr::except($packages, ['bootstrap-sass', 'jquery']);
+        ] + Arr::except($packages, ['bootstrap', 'bootstrap-sass', 'jquery']);
     }
 
     protected static function updateStyles()
