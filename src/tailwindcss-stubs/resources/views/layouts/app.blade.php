@@ -15,7 +15,7 @@
 </head>
 <body class="bg-brand-lightest h-screen">
     <div id="app">
-        <nav class="bg-white h-12 shadow mb-8">
+        <nav class="bg-white h-12 shadow mb-8 px-6 md:px-0">
             <div class="container mx-auto h-full">
                 <div class="flex items-center justify-center h-12">
                     <div class="mr-6">

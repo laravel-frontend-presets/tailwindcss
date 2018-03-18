@@ -26,22 +26,28 @@ class TailwindCssPreset extends Preset
 
     protected static function updatePackageArray(array $packages)
     {
-        return [
-            'tailwindcss' => '^0.4.0',
-            'glob-all' => '*',
-            'purgecss-webpack-plugin' => '*'
-        ] + Arr::except($packages, ['bootstrap', 'bootstrap-sass', 'jquery']);
+        return array_merge([
+            'laravel-mix-purgecss' => '^1.0',
+            'tailwindcss' => '>=0.5.1',
+        ], Arr::except($packages, [
+            'bootstrap',
+            'bootstrap-sass',
+            'jquery',
+            'popper.js',
+        ]));
     }
 
     protected static function updateStyles()
     {
-        (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
-        (new Filesystem)->delete(public_path('js/app.js'));
-        (new Filesystem)->delete(public_path('css/app.css'));
+        tap(new Filesystem, function ($filesystem) {
+            $filesystem->deleteDirectory(resource_path('assets/sass'));
+            $filesystem->delete(public_path('js/app.js'));
+            $filesystem->delete(public_path('css/app.css'));
 
-        if (! file_exists(resource_path('assets/css'))) {
-            mkdir(resource_path('assets/css'));
-        }
+            if (! $filesystem->isDirectory($directory = resource_path('assets/css'))) {
+                $filesystem->makeDirectory($directory, 0755, true);
+            }
+        });
 
         copy(__DIR__.'/tailwindcss-stubs/resources/assets/css/main.css', resource_path('assets/css/main.css'));
     }
@@ -50,14 +56,14 @@ class TailwindCssPreset extends Preset
     {
         copy(__DIR__.'/tailwindcss-stubs/tailwind.js', base_path('tailwind.js'));
         copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__.'/tailwindcss-stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/assets/js/bootstrap.js', resource_path('assets/js/bootstrap.js'));
     }
 
     protected static function updateWelcomePage()
     {
         (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
 
-        copy(__DIR__.'/tailwindcss-stubs/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
 
     protected static function scaffoldAuth()
@@ -70,7 +76,7 @@ class TailwindCssPreset extends Preset
             FILE_APPEND
         );
 
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/views', resource_path('views'));
+        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views', resource_path('views'));
     }
 
     protected static function compileControllerStub()
