@@ -39,13 +39,15 @@ class TailwindCssPreset extends Preset
 
     protected static function updateStyles()
     {
-        (new Filesystem)->deleteDirectory(resource_path('assets/sass'));
-        (new Filesystem)->delete(public_path('js/app.js'));
-        (new Filesystem)->delete(public_path('css/app.css'));
+        tap(new Filesystem, function ($filesystem) {
+            $filesystem->deleteDirectory(resource_path('assets/sass'));
+            $filesystem->delete(public_path('js/app.js'));
+            $filesystem->delete(public_path('css/app.css'));
 
-        if (! file_exists(resource_path('assets/css'))) {
-            mkdir(resource_path('assets/css'));
-        }
+            if (! $filesystem->isDirectory($directory = resource_path('assets/css'))) {
+                $filesystem->makeDirectory($directory, 0755, true);
+            }
+        });
 
         copy(__DIR__.'/tailwindcss-stubs/resources/assets/css/main.css', resource_path('assets/css/main.css'));
     }
