@@ -54,7 +54,7 @@ class TailwindCssPreset extends Preset
     {
         copy(__DIR__.'/tailwindcss-stubs/tailwind.js', base_path('tailwind.js'));
         copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
-        copy(__DIR__.'/tailwindcss-stubs/bootstrap.js', resource_path('assets/js/bootstrap.js'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/assets/js/bootstrap.js', resource_path('assets/js/bootstrap.js'));
     }
 
     protected static function updateWelcomePage()
