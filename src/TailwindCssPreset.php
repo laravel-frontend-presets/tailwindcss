@@ -63,7 +63,7 @@ class TailwindCssPreset extends Preset
     {
         (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
 
-        copy(__DIR__.'/tailwindcss-stubs/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
 
     protected static function scaffoldAuth()
@@ -76,7 +76,7 @@ class TailwindCssPreset extends Preset
             FILE_APPEND
         );
 
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/views', resource_path('views'));
+        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views', resource_path('views'));
     }
 
     protected static function compileControllerStub()
