@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex items-center">
-    <div class="md:w-1/2 md:mx-auto">
+<div class="flex items-center px-6 md:px-0">
+    <div class="w-full max-w-md md:mx-auto">
         <div class="rounded shadow">
             <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded-t">
                 Login
