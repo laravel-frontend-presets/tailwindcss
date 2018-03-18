@@ -26,11 +26,15 @@ class TailwindCssPreset extends Preset
 
     protected static function updatePackageArray(array $packages)
     {
-        return [
-            'tailwindcss' => '^0.4.0',
-            'glob-all' => '*',
-            'purgecss-webpack-plugin' => '*'
-        ] + Arr::except($packages, ['bootstrap', 'bootstrap-sass', 'jquery']);
+        return array_merge([
+            'laravel-mix-purgecss' => '^1.0',
+            'tailwindcss' => '>=0.5.1',
+        ], Arr::except($packages, [
+            'bootstrap',
+            'bootstrap-sass',
+            'jquery',
+            'popper.js',
+        ]));
     }
 
     protected static function updateStyles()
