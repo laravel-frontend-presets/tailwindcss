@@ -27,7 +27,7 @@ class TailwindCssPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            'laravel-mix-purgecss' => '^1.0',
+            'laravel-mix-purgecss' => '^2.0',
             'tailwindcss' => '>=0.5.1',
         ], Arr::except($packages, [
             'bootstrap',
