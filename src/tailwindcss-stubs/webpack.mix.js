@@ -1,5 +1,6 @@
 let mix = require("laravel-mix");
-let tailwindcss = require("tailwindcss");
+
+require("laravel-mix-tailwind");
 require("laravel-mix-purgecss");
 
 /*
@@ -13,28 +14,11 @@ require("laravel-mix-purgecss");
  |
  */
 
-mix
-  .js("resources/assets/js/app.js", "public/js")
-  .postCss("resources/assets/css/main.css", "public/css", [
-    tailwindcss("./tailwind.js")
-  ])
-  .purgeCss();
+mix.js("resources/assets/js/app.js", "public/js")
+   .postCss("resources/assets/css/app.css", "public/css")
+   .tailwind()
+   .purgeCss();
 
 if (mix.inProduction()) {
   mix.version();
 }
-
-// If you want to use LESS for your preprocessing
-// mix.less('resources/assets/less/main.less', 'public/css')
-//   .options({
-//     postCss: [
-//       tailwindcss('./tailwind.js'),
-//     ]
-//   })
-
-// If you want to use SASS for preprocessing
-// mix.sass('resources/assets/sass/app.scss', 'public/css')
-//    .options({
-//       processCssUrls: false,
-//       postCss: [ tailwindcss('tailwind.js') ],
-//    });

@@ -27,11 +27,13 @@ class TailwindCssPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
+            'laravel-mix' => '^2.1',
             'laravel-mix-purgecss' => '^2.0',
-            'tailwindcss' => '>=0.5.2',
+            'laravel-mix-tailwind' => '^0.1.0',
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
+            'laravel-mix',
             'jquery',
             'popper.js',
         ]));
@@ -49,7 +51,7 @@ class TailwindCssPreset extends Preset
             }
         });
 
-        copy(__DIR__.'/tailwindcss-stubs/resources/assets/css/main.css', resource_path('assets/css/main.css'));
+        copy(__DIR__.'/tailwindcss-stubs/resources/assets/css/app.css', resource_path('assets/css/app.css'));
     }
 
     protected static function updateBootstrapping()
