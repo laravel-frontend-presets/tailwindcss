@@ -33,6 +33,7 @@ class TailwindCssPreset extends Preset
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
+            'laravel-mix',
             'jquery',
             'popper.js',
         ]));
