@@ -2,7 +2,7 @@
 
 A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
 
-*Current version:* **Tailwind CSS 0.5.2**
+*Current version:* **Tailwind CSS 0.6.4**
 
 ## Usage
 
@@ -14,9 +14,9 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 6. `php artisan migrate` to create basic user tables.
 7. `php artisan serve` (or equivalent) to run server and test preset.
 
-### Changing colours
+### Config
 
-If you want to change the default orange colour being used, update the `brand-{modifier}` values in your `tailwind.js` file. You are of course free to modify this file as you see fit, and even remove and replace the brand configuration in the scaffolded views entirely.
+The default `tailwind.js` configuration file included by this package simply uses the config from the Tailwind vendor files. Should you wish to make changes, you should remove the file and run `node_modules/.bin/tailwind init`, which will generate a fresh configuration file for you, which you are free to change to suit your needs.
 
 ### Screenshots
 
