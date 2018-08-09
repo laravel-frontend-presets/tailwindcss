@@ -4,7 +4,7 @@
 <div class="flex items-center">
     <div class="md:w-1/2 md:mx-auto">
         <div class="rounded shadow">
-            <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded-t">
+            <div class="font-medium text-lg text-teal-darker bg-teal-lighter p-3 rounded-t">
                 Reset Password
             </div>
             <div class="bg-white p-3 rounded-b">
@@ -39,7 +39,7 @@
 
                     <div class="flex">
                         <div class="w-3/4 ml-auto">
-                            <button type="submit" class="bg-brand hover:bg-brand-dark text-white text-sm font-sembiold py-2 px-4 rounded mr-3">
+                            <button type="submit" class="bg-brand hover:bg-teal-dark text-white text-sm font-sembiold py-2 px-4 rounded mr-3">
                                 Reset Password
                             </button>
                         </div>
