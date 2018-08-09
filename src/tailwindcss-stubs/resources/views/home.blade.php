@@ -4,7 +4,7 @@
 <div class="flex items-center">
     <div class="md:w-1/2 md:mx-auto">
         <div class="rounded shadow">
-            <div class="font-medium text-lg text-teal-darker bg-teal-lighter p-3 rounded-t">
+            <div class="font-medium text-lg text-teal-darker bg-teal p-3 rounded-t">
                 Dashboard
             </div>
             <div class="bg-white p-3 rounded-b">
@@ -14,7 +14,7 @@
                     </div>
                 @endif
 
-                <p class="text-grey-dark text-sm">
+                <p class="text-grey-dark">
                     You are logged in!
                 </p>
             </div>
