@@ -1,12 +1,12 @@
-# Laravel 5.5+ Frontend preset for Tailwind CSS
+# Laravel 5.7+ Frontend preset for Tailwind CSS
 
 A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
 
-*Current version:* **Tailwind CSS 0.6.4**
+*Current version:* **Tailwind CSS 0.6.5**
 
 ## Usage
 
-1. Fresh install Laravel >= 5.5.0 and cd to your app.
+1. Fresh install Laravel >= 5.7.0 and cd to your app.
 2. Install this preset via `composer require laravel-frontend-presets/tailwindcss`. Laravel will automatically discover this package. No need to register the service provider.
 3. Use `php artisan preset tailwindcss` for the basic Tailwind CSS preset OR use `php artisan preset tailwindcss-auth` for the basic preset, auth route entry and Tailwind CSS auth views in one go. (NOTE: If you run this command several times, be sure to clean up the duplicate Auth entries in `routes/web.php`)
 4. `npm install && npm run dev && npm run dev` (this is required twice, due to the way that `laravel-mix-tailwind` installs the Tailwind CSS dependency)
@@ -31,3 +31,5 @@ The default `tailwind.js` configuration file included by this package simply use
 ![Reset Password](/screenshots/reset-password.png)
 
 ![Dashboard](/screenshots/dashboard.png)
+
+![Verify](/screenshots/verify.png)
