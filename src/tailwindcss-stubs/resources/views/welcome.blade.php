@@ -43,6 +43,9 @@
                             <a href="https://laravel-news.com" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="News">News</a>
                         </li>
                         <li class="inline pr-8">
+                            <a href="https://nova.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="Nova">Nova</a>
+                        </li>
+                        <li class="inline pr-8">
                             <a href="https://forge.laravel.com" class="no-underline hover:underline text-sm font-normal text-teal-darker uppercase" title="Forge">Forge</a>
                         </li>
                         <li class="inline pr-8">
