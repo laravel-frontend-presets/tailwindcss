@@ -25,15 +25,15 @@
                     </div>
                     <div class="flex-1 text-right">
                         @guest
-                            <a class="no-underline hover:underline text-teal-darker pr-3 text-sm" href="{{ url('/login') }}">Login</a>
-                            <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ url('/register') }}">Register</a>
+                            <a class="no-underline hover:underline text-teal-darker pr-3 text-sm" href="{{ url('/login') }}">{{ __('Login') }}</a>
+                            <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ url('/register') }}">{{ __('Register') }}</a>
                         @else
                             <span class="text-teal-darker text-sm pr-4">{{ Auth::user()->name }}</span>
 
                             <a href="{{ route('logout') }}"
                                 class="no-underline hover:underline text-teal-darker text-sm"
                                 onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();">Logout</a>
+                                document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
                                 {{ csrf_field() }}
                             </form>
