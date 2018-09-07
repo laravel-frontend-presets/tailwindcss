@@ -1,7 +1,7 @@
-let mix = require("laravel-mix");
+const mix = require('laravel-mix');
 
-require("laravel-mix-tailwind");
-require("laravel-mix-purgecss");
+require('laravel-mix-tailwind');
+require('laravel-mix-purgecss');
 
 /*
  |--------------------------------------------------------------------------
