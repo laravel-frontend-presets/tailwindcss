@@ -28,43 +28,38 @@ class TailwindCssPreset extends Preset
     {
         return array_merge([
             'laravel-mix' => '^2.1',
-            'laravel-mix-purgecss' => '^2.0',
+            'laravel-mix-purgecss' => '^2.2',
             'laravel-mix-tailwind' => '^0.1.0',
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
             'laravel-mix',
             'jquery',
-            'popper.js',
         ]));
     }
 
     protected static function updateStyles()
     {
         tap(new Filesystem, function ($filesystem) {
-            $filesystem->deleteDirectory(resource_path(self::flattenPath('sass')));
+            $filesystem->deleteDirectory(resource_path('sass'));
             $filesystem->delete(public_path('js/app.js'));
             $filesystem->delete(public_path('css/app.css'));
 
-            if (! $filesystem->isDirectory($directory = resource_path(self::flattenPath('css')))) { 
+            if (! $filesystem->isDirectory($directory = resource_path('css'))) {
                 $filesystem->makeDirectory($directory, 0755, true);
             }
         });
 
-        copy(__DIR__.'/tailwindcss-stubs/resources/assets/css/app.css', resource_path(self::flattenPath('css/app.css')));
+        copy(__DIR__.'/tailwindcss-stubs/resources/css/app.css', resource_path('css/app.css'));
     }
 
     protected static function updateBootstrapping()
     {
         copy(__DIR__.'/tailwindcss-stubs/tailwind.js', base_path('tailwind.js'));
 
-        if (self::flattenResources()) {
-            copy(__DIR__.'/tailwindcss-stubs/webpack57.mix.js', base_path('webpack.mix.js'));
-        } else {
-            copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
-        }
+        copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/tailwindcss-stubs/resources/assets/js/bootstrap.js', resource_path(self::flattenPath('js/bootstrap.js')));
+        copy(__DIR__.'/tailwindcss-stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
     }
 
     protected static function updateWelcomePage()
@@ -94,15 +89,5 @@ class TailwindCssPreset extends Preset
             Container::getInstance()->getNamespace(),
             file_get_contents(__DIR__.'/tailwindcss-stubs/controllers/HomeController.stub')
         );
-    }
-
-    private static function flattenResources()
-    {
-        return version_compare(app()->version(), '5.7.0', '>=');
-    }
-
-    private static function flattenPath($path)
-    {
-        return ((self::flattenResources()) ? '' : 'assets/') . $path;
     }
 }
