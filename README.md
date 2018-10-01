@@ -20,16 +20,16 @@ The default `tailwind.js` configuration file included by this package simply use
 
 ### Screenshots
 
-![Welcome](/screenshots/welcome.png)
+![Welcome](https://raw.githubusercontent.com/laravel-frontend-presets/tailwindcss/master/screenshots/welcome.png)
 
-![Register](/screenshots/register.png)
+![Register](https://raw.githubusercontent.com/laravel-frontend-presets/tailwindcss/master/screenshots/register.png)
 
-![Login](/screenshots/login.png)
+![Login](https://raw.githubusercontent.com/laravel-frontend-presets/tailwindcss/master/screenshots/login.png)
 
-![Send Password Reset](/screenshots/send-password-reset.png)
+![Send Password Reset](https://raw.githubusercontent.com/laravel-frontend-presets/tailwindcss/master/screenshots/send-password-reset.png)
 
-![Reset Password](/screenshots/reset-password.png)
+![Reset Password](https://raw.githubusercontent.com/laravel-frontend-presets/tailwindcss/master/screenshots/reset-password.png)
 
-![Dashboard](/screenshots/dashboard.png)
+![Dashboard](https://raw.githubusercontent.com/laravel-frontend-presets/tailwindcss/master/screenshots/dashboard.png)
 
-![Verify](/screenshots/verify.png)
+![Verify](https://raw.githubusercontent.com/laravel-frontend-presets/tailwindcss/master/screenshots/verify.png)
