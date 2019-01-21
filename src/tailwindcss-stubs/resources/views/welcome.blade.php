@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="bg-teal-lightest font-sans font-normal antialiased">
     <div class="flex flex-col">
