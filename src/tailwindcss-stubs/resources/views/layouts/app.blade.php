@@ -24,8 +24,8 @@
                     </div>
                     <div class="flex-1 text-right">
                         @guest
-                            <a class="no-underline hover:underline text-teal-darker pr-3 text-sm" href="{{ url('/login') }}">{{ __('Login') }}</a>
-                            <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ url('/register') }}">{{ __('Register') }}</a>
+                            <a class="no-underline hover:underline text-teal-darker pr-3 text-sm" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ route('register') }}">{{ __('Register') }}</a>
                         @else
                             <span class="text-teal-darker text-sm pr-4">{{ Auth::user()->name }}</span>
 
