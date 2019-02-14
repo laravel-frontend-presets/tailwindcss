@@ -12,7 +12,7 @@
     <!-- Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body class="bg-teal-lightest h-screen antialiased">
+<body class="bg-grey-lightest h-screen antialiased">
     <div id="app">
         <nav class="bg-blue-darkest shadow mb-8 py-6">
             <div class="container mx-auto px-6 md:px-0">
