@@ -1,51 +1,76 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex items-center px-6 md:px-0">
-    <div class="w-full max-w-md md:mx-auto">
-        <div class="rounded shadow">
-            <div class="font-medium text-lg text-teal-darker bg-teal p-3 rounded-t">
-                {{ __('Login') }}
-            </div>
-            <div class="bg-white p-3 rounded-b">
-                <form class="form-horizontal" method="POST" action="{{ route('login') }}">
-                    {{ csrf_field() }}
+    <div class="container mx-auto">
+        <div class="flex flex-wrap justify-center">
+            <div class="w-full max-w-sm">
+                <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
 
-                    <div class="flex items-stretch mb-3">
-                        <label for="email" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">{{ __('E-Mail Address') }}</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="email" type="email" class="flex-grow h-8 px-2 border rounded {{ $errors->has('email') ? 'border-red-dark' : 'border-grey-light' }}" name="email" value="{{ old('email') }}" required autofocus>
-                            {!! $errors->first('email', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+                    <div class="font-semibold bg-grey-lightest text-grey-darkest py-3 px-6 mb-0 shadow-inner">
+                        {{ __('Login') }}
+                    </div>
+
+                    <form class="w-full p-6" method="POST" action="{{ route('login') }}">
+                        @csrf
+
+                        <div class="flex flex-wrap mb-6">
+                            <label for="email" class="block text-grey-darker text-sm font-bold mb-2">
+                                {{ __('E-Mail Address') }}:
+                            </label>
+
+                            <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('email') ? ' border-red' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+
+                            @if ($errors->has('email'))
+                                <p class="text-red text-xs italic mt-4">
+                                    {{ $errors->first('email') }}
+                                </p>
+                            @endif
                         </div>
-                    </div>
 
-                    <div class="flex items-stretch mb-4">
-                        <label for="password" class="text-right font-semibold text-grey-dark text-sm pt-2 pr-3 align-middle w-1/4">{{ __('Password') }}</label>
-                        <div class="flex flex-col w-3/4">
-                            <input id="password" type="password" class="flex-grow h-8 px-2 rounded border {{ $errors->has('password') ? 'border-red-dark' : 'border-grey-light' }}" name="password" required>
-                            {!! $errors->first('password', '<span class="text-red-dark text-sm mt-2">:message</span>') !!}
+                        <div class="flex flex-wrap mb-6">
+                            <label for="password" class="block text-grey-darker text-sm font-bold mb-2">
+                                {{ __('Password') }}:
+                            </label>
+
+                            <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('password') ? ' border-red' : '' }}" name="password" required>
+
+                            @if ($errors->has('password'))
+                                <p class="text-red text-xs italic mt-4">
+                                    {{ $errors->first('password') }}
+                                </p>
+                            @endif
                         </div>
-                    </div>
 
-                    <div class="flex mb-4">
-                        <label class="w-3/4 ml-auto">
-                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> <span class="text-sm text-grey-dark"> {{ __('Remember Me') }}</span>
-                        </label>
-                    </div>
+                        <div class="flex mb-6">
+                            <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                    <div class="flex">
-                        <div class="w-3/4 ml-auto">
-                            <button type="submit" class="bg-teal hover:bg-teal-dark text-white text-sm font-semibold py-2 px-4 rounded mr-3">
+                            <label class="text-sm text-grey-dark ml-3" for="remember">
+                                {{ __('Remember Me') }}
+                            </label>
+                        </div>
+
+                        <div class="flex flex-wrap items-center">
+                            <button type="submit" class="bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 {{ __('Login') }}
                             </button>
-                            <a class="no-underline hover:underline text-teal-darker text-sm" href="{{ route('password.request') }}">
-                                {{ __('Forgot Your Password?') }}
-                            </a>
+
+                            @if (Route::has('password.request'))
+                                <a class="text-sm text-blue hover:text-blue-dark whitespace-no-wrap no-underline ml-auto" href="{{ route('password.request') }}">
+                                    {{ __('Forgot Your Password?') }}
+                                </a>
+                            @endif
+
+                            <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
+                                Don't have an account?
+                                <a class="text-blue hover:text-blue-dark no-underline" href="{{ route('register') }}">
+                                    Register
+                                </a>
+                            </p>
                         </div>
-                    </div>
-                </form>
+                    </form>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

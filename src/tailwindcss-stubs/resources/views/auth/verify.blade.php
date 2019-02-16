@@ -1,25 +1,33 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex items-center">
-    <div class="md:w-1/2 md:mx-auto">
-        <div class="rounded shadow">
-            <div class="font-medium text-lg text-teal-darker bg-teal p-3 rounded-t">
-                {{ __('Verify your Email Address') }}
-            </div>
-            <div class="bg-white p-3 rounded-b">
+    <div class="container mx-auto">
+        <div class="flex flex-wrap justify-center">
+            <div class="w-full max-w-sm">
+
                 @if (session('resent'))
-                    <div class="bg-green-lightest border border-green-light text-green-dark text-sm px-4 py-3 rounded mb-4">
+                    <div class="text-sm border border-t-8 rounded text-green-darker border-green-dark bg-green-lightest px-3 py-4 mb-4" role="alert">
                         {{ __('A fresh verification link has been sent to your email address.') }}
                     </div>
                 @endif
 
-                <p class="text-grey-dark">
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}" class="no-underline hover:underline text-teal-darker">{{ __('click here to request another') }}</a>.
-                </p>
+                <div class="flex flex-col break-words bg-white border border-2 rounded shadow-md">
+                    <div class="font-semibold bg-grey-lightest text-grey-darkest py-3 px-6 mb-0 shadow-inner">
+                        {{ __('Verify Your Email Address') }}
+                    </div>
+
+                    <div class="w-full flex flex-wrap p-6">
+                        <p class="leading-normal mb-6">
+                            {{ __('Before proceeding, please check your email for a verification link.') }}
+                        </p>
+
+                        <a class="bg-blue hover:bg-blue-dark text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline ml-auto" href="{{ route('verification.resend') }}">
+                            {{ __('Resend verification email') }}
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
 @endsection
