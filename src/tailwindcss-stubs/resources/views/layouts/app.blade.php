@@ -25,7 +25,9 @@
                     <div class="flex-1 text-right">
                         @guest
                             <a class="no-underline hover:underline text-grey-lightest text-sm p-3" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            <a class="no-underline hover:underline text-grey-lightest text-sm p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            @if (Route::has('register'))
+                                <a class="no-underline hover:underline text-grey-lightest text-sm p-3" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            @endif
                         @else
                             <span class="text-grey-lightest text-sm pr-4">{{ Auth::user()->name }}</span>
 
