@@ -60,12 +60,14 @@
                                 </a>
                             @endif
 
-                            <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
-                                Don't have an account?
-                                <a class="text-blue hover:text-blue-dark no-underline" href="{{ route('register') }}">
-                                    Register
-                                </a>
-                            </p>
+                            @if (Route::has('register'))
+                                <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
+                                    Don't have an account?
+                                    <a class="text-blue hover:text-blue-dark no-underline" href="{{ route('register') }}">
+                                        Register
+                                    </a>
+                                </p>
+                            @endif
                         </div>
                     </form>
 
