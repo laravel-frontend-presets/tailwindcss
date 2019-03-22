@@ -23,7 +23,7 @@
                             <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('email') ? ' border-red' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
                             @if ($errors->has('email'))
-                                <p class="text-red-500-500 text-xs italic mt-4">
+                                <p class="text-red-500 text-xs italic mt-4">
                                     {{ $errors->first('email') }}
                                 </p>
                             @endif
