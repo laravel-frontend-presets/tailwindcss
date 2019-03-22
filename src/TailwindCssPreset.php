@@ -30,12 +30,13 @@ class TailwindCssPreset extends Preset
             'laravel-mix' => '^4.0.14',
             'laravel-mix-purgecss' => '^4.1',
             'laravel-mix-tailwind' => '^0.1.0',
-            'tailwindcss' => '^0.7.4',
+            'tailwindcss' => '^1.0.0-beta.3',
             'vue' => '^2.5.17',
             'vue-template-compiler' => '^2.6.4',
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
+            'popper.js',
             'laravel-mix',
             'jquery',
         ]));
@@ -58,7 +59,7 @@ class TailwindCssPreset extends Preset
 
     protected static function updateBootstrapping()
     {
-        copy(__DIR__.'/tailwindcss-stubs/tailwind.js', base_path('tailwind.js'));
+        copy(__DIR__.'/tailwindcss-stubs/tailwind.config.js', base_path('tailwind.config.js'));
 
         copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
