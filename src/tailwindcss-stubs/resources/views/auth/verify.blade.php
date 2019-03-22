@@ -21,7 +21,7 @@
                             {{ __('Before proceeding, please check your email for a verification link.') }}
                         </p>
 
-                        <a class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline ml-auto" href="{{ route('verification.resend') }}">
+                        <a class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline mx-auto" href="{{ route('verification.resend') }}">
                             {{ __('Resend verification email') }}
                         </a>
                     </div>
