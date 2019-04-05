@@ -40,7 +40,7 @@
                             </button>
 
                             <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
-                                <a class="text-blue hover:text-blue-dark no-underline" href="{{ route('login') }}">
+                                <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('login') }}">
                                     Back to login
                                 </a>
                             </p>
