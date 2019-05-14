@@ -2,8 +2,6 @@
 
 A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
 
-*Current version:* **Tailwind CSS 1.0**
-
 ## Usage
 
 1. Fresh install Laravel >= 5.7.0 and cd to your app.
