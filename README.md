@@ -5,7 +5,7 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 ## Usage
 
 1. Fresh install Laravel >= 5.7.0 and cd to your app.
-2. Install this preset via `composer require laravel-frontend-presets/tailwindcss`. Laravel will automatically discover this package. No need to register the service provider.
+2. Install this preset via `composer require laravel-frontend-presets/tailwindcss --dev`. Laravel will automatically discover this package. No need to register the service provider.
 
 ### For Presets without Authentication
 
