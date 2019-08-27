@@ -21,9 +21,13 @@
                             {{ __('Before proceeding, please check your email for a verification link.') }}
                         </p>
 
-                        <a class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline mx-auto" href="{{ route('verification.resend') }}">
-                            {{ __('Resend verification email') }}
-                        </a>
+                        {{ __('If you did not receive the email') }},
+                        <form class="inline" method="post" action="{{ route('verification.resend') }}">
+                            @csrf
+                            <button class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline mx-auto">
+                                {{ __('click here to resend another') }}
+                            </button>
+                        </form>
                     </div>
 
                 </div>
