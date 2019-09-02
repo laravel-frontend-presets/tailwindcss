@@ -17,13 +17,17 @@
                     </div>
 
                     <div class="w-full flex flex-wrap p-6">
-                        <p class="leading-normal mb-6">
+                        <p class="leading-normal">
                             {{ __('Before proceeding, please check your email for a verification link.') }}
                         </p>
 
-                        <a class="bg-blue-500 hover:bg-blue-700 text-gray-100 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline no-underline mx-auto" href="{{ route('verification.resend') }}">
-                            {{ __('Resend verification email') }}
-                        </a>
+                        <p class="leading-normal mt-6">
+                            {{ __('If you did not receive the email') }}, <a class="text-blue-500 hover:text-blue-700 no-underline" onclick="event.preventDefault(); document.getElementById('resend-verification-form').submit();">{{ __('click here to resend another') }}</a>.
+                        </p>
+
+                        <form id="resend-verification-form" action="{{ route('verification.resend') }}" class="hidden">
+                            @csrf
+                        </form>
                     </div>
 
                 </div>
