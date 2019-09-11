@@ -25,7 +25,7 @@
                             {{ __('If you did not receive the email') }}, <a class="text-blue-500 hover:text-blue-700 no-underline" onclick="event.preventDefault(); document.getElementById('resend-verification-form').submit();">{{ __('click here to resend another') }}</a>.
                         </p>
 
-                        <form id="resend-verification-form" action="{{ route('verification.resend') }}" class="hidden">
+                        <form id="resend-verification-form" method="POST" action="{{ route('verification.resend') }}" class="hidden">
                             @csrf
                         </form>
                     </div>
