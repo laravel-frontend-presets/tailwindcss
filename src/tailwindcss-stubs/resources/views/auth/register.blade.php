@@ -69,9 +69,9 @@
                             </button>
 
                             <p class="w-full text-xs text-center text-gray-700 mt-8 -mb-4">
-                                Already have an account?
+                                {{ __('Already have an account?') }}
                                 <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('login') }}">
-                                    Login
+                                    {{ __('Login') }}
                                 </a>
                             </p>
                         </div>
