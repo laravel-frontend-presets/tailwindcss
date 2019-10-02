@@ -18,13 +18,13 @@
                                 {{ __('Name') }}:
                             </label>
 
-                            <input id="name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('name') ? ' border-red-500' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                            <input id="name" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('name')  border-red-500 @enderror" name="name" value="{{ old('name') }}" required autofocus>
 
-                            @if ($errors->has('name'))
+                            @error('name')
                                 <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $errors->first('name') }}
+                                    {{ $message }}
                                 </p>
-                            @endif
+                            @enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
@@ -32,13 +32,13 @@
                                 {{ __('E-Mail Address') }}:
                             </label>
 
-                            <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('email') ? ' border-red-500' : '' }}" name="email" value="{{ old('email') }}" required>
+                            <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('email') border-red-500 @enderror" name="email" value="{{ old('email') }}" required>
 
-                            @if ($errors->has('email'))
+                            @error('email')
                                 <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $errors->first('email') }}
+                                    {{ $message }}
                                 </p>
-                            @endif
+                            @enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
@@ -46,13 +46,13 @@
                                 {{ __('Password') }}:
                             </label>
 
-                            <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('password') ? ' border-red-500' : '' }}" name="password" required>
+                            <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red-500 @enderror" name="password" required>
 
-                            @if ($errors->has('password'))
+                            @error('password')
                                 <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $errors->first('password') }}
+                                    {{ $message }}
                                 </p>
-                            @endif
+                            @enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
