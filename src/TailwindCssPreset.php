@@ -31,8 +31,6 @@ class TailwindCssPreset extends Preset
             'laravel-mix-purgecss' => '^4.1',
             'laravel-mix-tailwind' => '^0.1.0',
             'tailwindcss' => '^1.0',
-            'vue' => '^2.5.17',
-            'vue-template-compiler' => '^2.6.4',
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
