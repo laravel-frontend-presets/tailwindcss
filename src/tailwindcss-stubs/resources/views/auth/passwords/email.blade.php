@@ -41,7 +41,7 @@
 
                             <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
                                 <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('login') }}">
-                                    Back to login
+                                    {{ __('Back to login') }}
                                 </a>
                             </p>
                         </div>
