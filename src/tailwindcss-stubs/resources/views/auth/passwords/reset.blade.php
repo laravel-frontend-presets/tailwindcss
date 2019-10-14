@@ -20,13 +20,13 @@
                                 {{ __('E-Mail Address') }}:
                             </label>
 
-                            <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('email') ? ' border-red' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                            <input id="email" type="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('email') border-red @enderror" name="email" value="{{ old('email') }}" required autofocus>
 
-                            @if ($errors->has('email'))
+                            @error('email')
                                 <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $errors->first('email') }}
+                                    {{ $message }}
                                 </p>
-                            @endif
+                            @enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
@@ -34,13 +34,13 @@
                                 {{ __('Password') }}:
                             </label>
 
-                            <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline{{ $errors->has('password') ? ' border-red' : '' }}" name="password" required>
+                            <input id="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline @error('password') border-red @enderror" name="password" required>
 
-                            @if ($errors->has('password'))
+                            @error('password')
                                 <p class="text-red-500 text-xs italic mt-4">
-                                    {{ $errors->first('password') }}
+                                    {{ $message }}
                                 </p>
-                            @endif
+                            @enderror
                         </div>
 
                         <div class="flex flex-wrap mb-6">
