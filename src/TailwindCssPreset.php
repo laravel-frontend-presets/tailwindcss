@@ -15,6 +15,7 @@ class TailwindCssPreset extends Preset
         static::updateStyles();
         static::updateBootstrapping();
         static::updateWelcomePage();
+        static::updatePagination();
         static::removeNodeModules();
     }
 
@@ -69,6 +70,13 @@ class TailwindCssPreset extends Preset
         (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
 
         copy(__DIR__.'/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
+    }
+
+    protected static function updatePagination()
+    {
+        (new Filesystem)->delete(resource_path('views/vendor/paginate'));
+
+        copy(__DIR__.'/tailwindcss-stubs/resources/views/paginate', resource_path('views/paginate'));
     }
 
     protected static function scaffoldAuth()
