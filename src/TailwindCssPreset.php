@@ -76,7 +76,7 @@ class TailwindCssPreset extends Preset
     {
         (new Filesystem)->delete(resource_path('views/vendor/paginate'));
 
-        copy(__DIR__.'/tailwindcss-stubs/resources/views/paginate', resource_path('views/paginate'));
+        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views/vendor/pagination', resource_path('views/vendor/pagination'));
     }
 
     protected static function scaffoldAuth()
