@@ -25,6 +25,23 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 
 The default `tailwind.config.js` configuration file included by this package simply uses the config from the Tailwind vendor files. Should you wish to make changes, you should remove the file and run `node_modules/.bin/tailwind init`, which will generate a fresh configuration file for you, which you are free to change to suit your needs.
 
+Add a new i18n string in the `resources/lang/XX/pagination.php` file for each language that your app uses:
+```php
+'previous' => '&laquo; Previous',
+'next' => 'Next &raquo;',
+'goto_page' => 'Goto page #:page', // Add this line
+```
+This should help with accessibility
+```html
+<li>
+    <a href="URL?page=2" class="..." 
+       aria-label="Goto page #2"
+    >
+        2
+    </a>
+</li>
+```
+
 ### Screenshots
 
 ![Welcome](/screenshots/welcome.png)
@@ -38,3 +55,6 @@ The default `tailwind.config.js` configuration file included by this package sim
 ![Dashboard](/screenshots/dashboard.png)
 
 ![Verify](/screenshots/verify.png)
+
+![Pagination](/screenshots/pagination-links.png)
+![Simple Pagination](/screenshots/simple-pagination-links.png)
