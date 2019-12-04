@@ -2,18 +2,22 @@
 
 A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.com) - a Utility-First CSS Framework for Rapid UI Development.
 
-## Usage
+## 1. Basic usage
+
+1. Run `npx use-tailwind-preset`
+
+## 2. Advanced Usage
 
 1. Fresh install Laravel >= 6.0 and cd to your app.
 2. Install this preset via `composer require laravel-frontend-presets/tailwindcss --dev`. Laravel will automatically discover this package. No need to register the service provider.
 
-### For Presets without Authentication
+### a. For Presets without Authentication
 
 1. Use `php artisan preset tailwindcss` for the basic Tailwind CSS preset
 2. `npm install && npm run dev`
 3. `php artisan serve` (or equivalent) to run server and test preset.
 
-### For Presets with Authentication
+### b. For Presets with Authentication
 
 1. Use `php artisan preset tailwindcss-auth` for the basic preset, auth route entry and Tailwind CSS auth views in one go. (NOTE: If you run this command several times, be sure to clean up the duplicate Auth entries in `routes/web.php`)
 4. `npm install && npm run dev`
