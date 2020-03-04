@@ -3,9 +3,11 @@
 namespace LaravelFrontendPresets\TailwindCssPreset;
 
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
-use Illuminate\Foundation\Console\Presets\Preset;
+use Laravel\Ui\Presets\Preset;
+use Symfony\Component\Finder\SplFileInfo;
 
 class TailwindCssPreset extends Preset
 {
@@ -15,13 +17,13 @@ class TailwindCssPreset extends Preset
         static::updateStyles();
         static::updateBootstrapping();
         static::updateWelcomePage();
-        static::updatePagination();
         static::removeNodeModules();
     }
 
     public static function installAuth()
     {
         static::install();
+        static::scaffoldController();
         static::scaffoldAuth();
     }
 
@@ -73,11 +75,21 @@ class TailwindCssPreset extends Preset
         copy(__DIR__.'/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
 
-    protected static function updatePagination()
+    protected static function scaffoldController()
     {
-        (new Filesystem)->delete(resource_path('views/vendor/paginate'));
+        if (! is_dir($directory = app_path('Http/Controllers/Auth'))) {
+            mkdir($directory, 0755, true);
+        }
 
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views/vendor/pagination', resource_path('views/vendor/pagination'));
+        $filesystem = new Filesystem;
+
+        collect($filesystem->allFiles(base_path('vendor/laravel/ui/stubs/Auth')))
+            ->each(function (SplFileInfo $file) use ($filesystem) {
+                $filesystem->copy(
+                    $file->getPathname(),
+                    app_path('Http/Controllers/Auth/'.Str::replaceLast('.stub', '.php', $file->getFilename()))
+                );
+            });
     }
 
     protected static function scaffoldAuth()
