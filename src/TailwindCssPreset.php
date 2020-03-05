@@ -23,7 +23,6 @@ class TailwindCssPreset extends Preset
 
     public static function installAuth()
     {
-        static::install();
         static::scaffoldController();
         static::scaffoldAuth();
     }

@@ -14,14 +14,11 @@ class TailwindCssPresetServiceProvider extends ServiceProvider
         UiCommand::macro('tailwindcss', function ($command) {
             TailwindCssPreset::install();
 
+            if ( $command->option('auth') ) {
+                TailwindCssPreset::installAuth();
+            }
+
             $command->info('Tailwind CSS scaffolding installed successfully.');
-            $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
-        });
-
-        AuthCommand::macro('tailwindcss', function ($command) {
-            TailwindCssPreset::installAuth();
-
-            $command->info('Tailwind CSS scaffolding with auth views installed successfully.');
             $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
         });
 
