@@ -15,7 +15,7 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 
 ### b. For Presets with Authentication
 
-1. Use `php artisan ui tailwindcss --auth` for the basic preset, auth route entry and Tailwind CSS auth views in one go. (NOTE: If you run this command several times, be sure to clean up the duplicate Auth entries in `routes/web.php`)
+1. Use `php artisan ui tailwindcss-auth` for the basic preset, auth route entry and Tailwind CSS auth views in one go. (NOTE: If you run this command several times, be sure to clean up the duplicate Auth entries in `routes/web.php`)
 4. `npm install && npm run dev`
 5. Configure your favorite database (mysql, sqlite etc.)
 6. `php artisan migrate` to create basic user tables.

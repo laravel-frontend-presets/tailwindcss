@@ -18,7 +18,7 @@ class TailwindCssPresetServiceProvider extends ServiceProvider
             $command->comment('Please run "npm install && npm run dev" to compile your fresh scaffolding.');
         });
 
-        AuthCommand::macro('tailwindcss', function ($command) {
+        AuthCommand::macro('tailwindcss-auth', function ($command) {
             TailwindCssPreset::installAuth();
 
             $command->info('Tailwind CSS scaffolding with auth views installed successfully.');
