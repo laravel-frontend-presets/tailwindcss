@@ -109,7 +109,17 @@ class TailwindCssPreset extends Preset
             FILE_APPEND
         );
 
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views', resource_path('views'));
+        tap(new Filesystem, function ($filesystem) {
+            $filesystem->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views', resource_path('views'));
+
+            collect($filesystem->allFiles(base_path('vendor/laravel/ui/stubs/migrations')))
+                ->each(function (SplFileInfo $file) use ($filesystem) {
+                    $filesystem->copy(
+                        $file->getPathname(),
+                        database_path('migrations/'.$file->getFilename())
+                    );
+                });
+        });
     }
 
     protected static function compileControllerStub()
