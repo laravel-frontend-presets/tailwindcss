@@ -39,7 +39,7 @@
                                 {{ __('Send Password Reset Link') }}
                             </button>
 
-                            <p class="w-full text-xs text-center text-grey-dark mt-8 -mb-4">
+                            <p class="w-full text-xs text-center text-gray-700 mt-8 -mb-4">
                                 <a class="text-blue-500 hover:text-blue-700 no-underline" href="{{ route('login') }}">
                                     {{ __('Back to login') }}
                                 </a>
