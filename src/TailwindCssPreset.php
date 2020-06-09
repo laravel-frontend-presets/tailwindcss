@@ -17,7 +17,6 @@ class TailwindCssPreset extends Preset
         static::updateStyles();
         static::updateBootstrapping();
         static::updateWelcomePage();
-        static::updatePagination();
         static::removeNodeModules();
     }
 
@@ -50,40 +49,33 @@ class TailwindCssPreset extends Preset
             $filesystem->delete(public_path('js/app.js'));
             $filesystem->delete(public_path('css/app.css'));
 
-            if (! $filesystem->isDirectory($directory = resource_path('css'))) {
+            if (!$filesystem->isDirectory($directory = resource_path('css'))) {
                 $filesystem->makeDirectory($directory, 0755, true);
             }
         });
 
-        copy(__DIR__.'/tailwindcss-stubs/resources/css/app.css', resource_path('css/app.css'));
+        copy(__DIR__ . '/tailwindcss-stubs/resources/css/app.css', resource_path('css/app.css'));
     }
 
     protected static function updateBootstrapping()
     {
-        copy(__DIR__.'/tailwindcss-stubs/tailwind.config.js', base_path('tailwind.config.js'));
+        copy(__DIR__ . '/tailwindcss-stubs/tailwind.config.js', base_path('tailwind.config.js'));
 
-        copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        copy(__DIR__ . '/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
-        copy(__DIR__.'/tailwindcss-stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
-    }
-
-    protected static function updatePagination()
-    {
-        (new Filesystem)->delete(resource_path('views/vendor/paginate'));
-
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views/vendor/pagination', resource_path('views/vendor/pagination'));
+        copy(__DIR__ . '/tailwindcss-stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
     }
 
     protected static function updateWelcomePage()
     {
         (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
 
-        copy(__DIR__.'/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
+        copy(__DIR__ . '/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
     }
 
     protected static function scaffoldController()
     {
-        if (! is_dir($directory = app_path('Http/Controllers/Auth'))) {
+        if (!is_dir($directory = app_path('Http/Controllers/Auth'))) {
             mkdir($directory, 0755, true);
         }
 
@@ -93,7 +85,7 @@ class TailwindCssPreset extends Preset
             ->each(function (SplFileInfo $file) use ($filesystem) {
                 $filesystem->copy(
                     $file->getPathname(),
-                    app_path('Http/Controllers/Auth/'.Str::replaceLast('.stub', '.php', $file->getFilename()))
+                    app_path('Http/Controllers/Auth/' . Str::replaceLast('.stub', '.php', $file->getFilename()))
                 );
             });
     }
@@ -109,13 +101,13 @@ class TailwindCssPreset extends Preset
         );
 
         tap(new Filesystem, function ($filesystem) {
-            $filesystem->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views', resource_path('views'));
+            $filesystem->copyDirectory(__DIR__ . '/tailwindcss-stubs/resources/views', resource_path('views'));
 
             collect($filesystem->allFiles(base_path('vendor/laravel/ui/stubs/migrations')))
                 ->each(function (SplFileInfo $file) use ($filesystem) {
                     $filesystem->copy(
                         $file->getPathname(),
-                        database_path('migrations/'.$file->getFilename())
+                        database_path('migrations/' . $file->getFilename())
                     );
                 });
         });
@@ -126,7 +118,7 @@ class TailwindCssPreset extends Preset
         return str_replace(
             '{{namespace}}',
             Container::getInstance()->getNamespace(),
-            file_get_contents(__DIR__.'/tailwindcss-stubs/controllers/HomeController.stub')
+            file_get_contents(__DIR__ . '/tailwindcss-stubs/controllers/HomeController.stub')
         );
     }
 }

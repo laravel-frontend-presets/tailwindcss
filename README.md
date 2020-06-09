@@ -34,13 +34,16 @@ Add a new i18n string in the `resources/lang/XX/pagination.php` file for each la
 This should help with accessibility
 ```html
 <li>
-    <a href="URL?page=2" class="..." 
+    <a href="URL?page=2" class="..."
        aria-label="Goto page #2"
     >
         2
     </a>
 </li>
 ```
+
+#### Pagination
+Laravel now supports tailwindcss pagination, you can refer to [docs](https://laravel.com/docs/master/pagination#using-tailwind).
 
 ### Screenshots
 
@@ -55,6 +58,3 @@ This should help with accessibility
 ![Dashboard](/screenshots/dashboard.png)
 
 ![Verify](/screenshots/verify.png)
-
-![Pagination](/screenshots/pagination-links.png)
-![Simple Pagination](/screenshots/simple-pagination-links.png)
