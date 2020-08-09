@@ -4,7 +4,6 @@ namespace LaravelFrontendPresets\TailwindCssPreset;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Ui\UiCommand;
-use Laravel\Ui\AuthCommand;
 
 class TailwindCssPresetServiceProvider extends ServiceProvider
 {
