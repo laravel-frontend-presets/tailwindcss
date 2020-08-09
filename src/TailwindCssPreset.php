@@ -2,10 +2,10 @@
 
 namespace LaravelFrontendPresets\TailwindCssPreset;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Str;
 use Illuminate\Container\Container;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Laravel\Ui\Presets\Preset;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -17,7 +17,6 @@ class TailwindCssPreset extends Preset
         static::updateStyles();
         static::updateBootstrapping();
         static::updateWelcomePage();
-        static::updatePagination();
         static::removeNodeModules();
     }
 
@@ -65,13 +64,6 @@ class TailwindCssPreset extends Preset
         copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
 
         copy(__DIR__.'/tailwindcss-stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
-    }
-
-    protected static function updatePagination()
-    {
-        (new Filesystem)->delete(resource_path('views/vendor/paginate'));
-
-        (new Filesystem)->copyDirectory(__DIR__.'/tailwindcss-stubs/resources/views/vendor/pagination', resource_path('views/vendor/pagination'));
     }
 
     protected static function updateWelcomePage()
