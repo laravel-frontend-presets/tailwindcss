@@ -43,7 +43,7 @@ This should help with accessibility
 ```
 
 #### Pagination
-Laravel now supports tailwindcss pagination, you can refer to [docs](https://laravel.com/docs/master/pagination#using-tailwind).
+Laravel now supports Tailwind CSS pagination directly. If you would like to use these views in your app, you can refer to [docs](https://laravel.com/docs/master/pagination#using-tailwind).
 
 ### Screenshots
 
