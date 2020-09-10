@@ -4,7 +4,7 @@
   "keywords": ["laravel", "preset", "tailwindcss"],
   "license": "MIT",
   "require": {
-    "laravel/framework": "^7.0",
+    "laravel/framework": "^8.0",
     "laravel/ui": "^2.0"
   },
   "autoload": {
