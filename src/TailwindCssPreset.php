@@ -34,7 +34,7 @@ class TailwindCssPreset extends Preset
             'laravel-mix' => '^5.0.1',
             'postcss-import' => '^12.0',
             'postcss-nested' => '^4.2',
-            'tailwindcss' => '^1.4',
+            'tailwindcss' => '^1.8',
             'vue-template-compiler' => '^2.6.11',
         ], Arr::except($packages, [
             'bootstrap',
