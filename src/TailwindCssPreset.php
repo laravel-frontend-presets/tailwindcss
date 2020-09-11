@@ -99,7 +99,7 @@ class TailwindCssPreset extends Preset
 
         file_put_contents(
             base_path('routes/web.php'),
-            "Auth::routes();\n\nRoute::get('/home', 'HomeController@index')->name('home');\n\n",
+            "Auth::routes();\n\nRoute::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');\n\n",
             FILE_APPEND
         );
 
