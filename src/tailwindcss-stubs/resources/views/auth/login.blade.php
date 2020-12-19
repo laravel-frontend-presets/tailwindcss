@@ -62,7 +62,7 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                        class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4 {{ ! Route::has('register') ? 'mb-8' : '' }}">
                             {{ __('Login') }}
                         </button>
 
