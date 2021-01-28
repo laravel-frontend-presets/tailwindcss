@@ -23,7 +23,7 @@ A Laravel front-end scaffolding preset for [Tailwind CSS](https://tailwindcss.co
 
 ### Config
 
-The default `tailwind.config.js` configuration file included by this package simply uses the config from the Tailwind vendor files. Should you wish to make changes, you should remove the file and run `node_modules/.bin/tailwind init`, which will generate a fresh configuration file for you, which you are free to change to suit your needs.
+The default `tailwind.config.js` configuration file included by this package simply uses the config from the Tailwind vendor files. Should you wish to make changes, you should remove the file and run `npx tailwindcss init`, which will generate a fresh configuration file for you, which you are free to change to suit your needs.
 
 Add a new i18n string in the `resources/lang/XX/pagination.php` file for each language that your app uses:
 ```php
@@ -46,8 +46,6 @@ This should help with accessibility
 Laravel now supports Tailwind CSS pagination directly. If you would like to use these views in your app, you can refer to [docs](https://laravel.com/docs/master/pagination#using-tailwind).
 
 ### Screenshots
-
-![Welcome](/screenshots/welcome.png)
 
 ![Register](/screenshots/register.png)
 

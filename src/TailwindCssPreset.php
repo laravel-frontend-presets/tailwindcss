@@ -16,7 +16,6 @@ class TailwindCssPreset extends Preset
         static::updatePackages();
         static::updateStyles();
         static::updateBootstrapping();
-        static::updateWelcomePage();
         static::removeNodeModules();
     }
 
@@ -29,12 +28,13 @@ class TailwindCssPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            '@tailwindcss/ui' => '^0.3',
-            'autoprefixer' => '^9.6',
-            'laravel-mix' => '^5.0.1',
+            '@tailwindcss/forms' => '^0.2.1',
+            'autoprefixer' => '^10.2.3',
+            'laravel-mix' => '^6.0.6',
+            'postcss' => '^8.2.4',
             'postcss-import' => '^12.0',
             'postcss-nested' => '^4.2',
-            'tailwindcss' => '^1.8',
+            'tailwindcss' => '^2.0.2',
             'vue-template-compiler' => '^2.6.11',
         ], Arr::except($packages, [
             'bootstrap',
@@ -69,17 +69,11 @@ class TailwindCssPreset extends Preset
         copy(__DIR__.'/tailwindcss-stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
     }
 
-    protected static function updateWelcomePage()
-    {
-        (new Filesystem)->delete(resource_path('views/welcome.blade.php'));
-
-        copy(__DIR__.'/tailwindcss-stubs/resources/views/welcome.blade.php', resource_path('views/welcome.blade.php'));
-    }
-
     protected static function scaffoldController()
     {
-        if (! is_dir($directory = app_path('Http/Controllers/Auth'))) {
-            mkdir($directory, 0755, true);
+        $directory = app_path('Http/Controllers/Auth');
+        if (!is_dir($directory) && !mkdir($directory, 0755, true) && !is_dir($directory)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $directory));
         }
 
         $filesystem = new Filesystem;
