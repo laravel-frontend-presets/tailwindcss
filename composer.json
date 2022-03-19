@@ -8,8 +8,8 @@
   ],
   "license": "MIT",
   "require": {
-    "laravel/framework": "^8.0",
-    "laravel/ui": "^3.0"
+    "laravel/framework": "^9.0",
+    "laravel/ui": "^3.4"
   },
   "autoload": {
     "psr-4": {
