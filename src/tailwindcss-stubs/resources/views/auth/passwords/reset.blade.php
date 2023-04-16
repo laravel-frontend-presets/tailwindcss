@@ -21,7 +21,7 @@
                         </label>
 
                         <input id="email" type="email"
-                            class="form-input w-full @error('email') border-red-500 @enderror" name="email"
+                            class="form-input w-full px-4 py-3 @error('email') border-red-500 @enderror" name="email"
                             value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
 
                         @error('email')
@@ -37,7 +37,7 @@
                         </label>
 
                         <input id="password" type="password"
-                            class="form-input w-full @error('password') border-red-500 @enderror" name="password"
+                            class="form-input w-full px-4 py-3 @error('password') border-red-500 @enderror" name="password"
                             required autocomplete="new-password">
 
                         @error('password')
@@ -52,7 +52,7 @@
                             {{ __('Confirm Password') }}:
                         </label>
 
-                        <input id="password-confirm" type="password" class="form-input w-full"
+                        <input id="password-confirm" type="password" class="form-input w-full px-4 py-3"
                             name="password_confirmation" required autocomplete="new-password">
                     </div>
 

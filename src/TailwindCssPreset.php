@@ -29,13 +29,10 @@ class TailwindCssPreset extends Preset
     protected static function updatePackageArray(array $packages)
     {
         return array_merge([
-            '@tailwindcss/ui' => '^0.3',
-            'autoprefixer' => '^9.6',
-            'laravel-mix' => '^5.0.1',
-            'postcss-import' => '^12.0',
-            'postcss-nested' => '^4.2',
-            'tailwindcss' => '^1.8',
-            'vue-template-compiler' => '^2.6.11',
+            'tailwindcss' => '^3.0.23',
+            'postcss' => '^8.4.12',
+            'autoprefixer' => '^10.4.4',
+            'laravel-mix' => '^6.0',
         ], Arr::except($packages, [
             'bootstrap',
             'bootstrap-sass',
@@ -65,6 +62,8 @@ class TailwindCssPreset extends Preset
         copy(__DIR__.'/tailwindcss-stubs/tailwind.config.js', base_path('tailwind.config.js'));
 
         copy(__DIR__.'/tailwindcss-stubs/webpack.mix.js', base_path('webpack.mix.js'));
+        
+        // copy(__DIR__.'/tailwindcss-stubs/postcss.config.js', base_path('postcss.config.js'));
 
         copy(__DIR__.'/tailwindcss-stubs/resources/js/bootstrap.js', resource_path('js/bootstrap.js'));
     }
@@ -119,7 +118,7 @@ class TailwindCssPreset extends Preset
     protected static function compileControllerStub()
     {
         return str_replace(
-            '{{namespace}}',
+            '{{ namespace }}',
             Container::getInstance()->getNamespace(),
             file_get_contents(__DIR__.'/tailwindcss-stubs/controllers/HomeController.stub')
         );
